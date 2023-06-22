@@ -1,0 +1,21 @@
+.header-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding:20px 30px
+}
+.product-div{
+  display: flex;
+  flex-wrap: wrap;
+}
+.product{
+
+  width: 20%;
+  padding:30px
+}
+.product-img{
+  width:40%;
+}
+.cart-img{
+  width:3%
+}
