@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "react-router-dom": "^6.13.0"
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.6"
+  },
+  "devDependencies": {
+    "prettier": "2.8.8"
   }
 }

@@ -1,11 +1,12 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
 const Header = (props) => {
+  const navigate = useNavigate()
   return (
     <>
     <div className='header-div'>
-      <div onClick={()=>props.show(false)}>Shopp Anything</div>
-      <div onClick={()=>props.show(true)}> Cart
+      <div className="title"onClick={()=>navigate('/input')}><b>Shop Wear</b></div>
+      <div className='title' onClick={()=>navigate('/cartlist')}> Cart
         <sup>{props.count}</sup>
       </div>
     </div>

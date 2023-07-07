@@ -14,22 +14,22 @@ useEffect(()=>{
                 updatedCart?.map((cartElement,cartIndex)=>{
 
                     return(
-                        <div>
-                            <img className="cart-img" src={cartElement.url} alt=""/>
+                        <div className='cart-div'>
+                            <img className="cart-img" src={cartElement.image} alt=""/>
                             <p>{cartElement.name} </p>
-                            <p>Rs.{cartElement.price * cartElement.quantity}/-</p>
-                            <button onClick={()=>{
+                            <p className='cart-info'>Rs.{cartElement.price * cartElement.quantity}/-</p>
+                            <button className='cartListButton' onClick={()=>{
                               const mappedCart=updatedCart.map((item,index)=>{
                                 return  cartIndex === index ? {...item , quantity: item.quantity +1} : item
 
                               })
                               setupdatedCart(mappedCart)
                             }}>+</button>
-                            <span> {cartElement.quantity} piece </span>
-                            <button onClick={()=>{
+                            <span className='peice'> {cartElement.quantity} piece </span>
+                            <button className='cartListButton' onClick={()=>{
                               const mappedCart=updatedCart.map((item,index)=>{
                                 return cartIndex === index ? {...item, quantity:item.quantity > 0 ? item.quantity - 1 : 0} :item
-                              })
+                             })
                               setupdatedCart(mappedCart)
                             }}>-</button>
 
@@ -38,12 +38,15 @@ useEffect(()=>{
                 })
                 
         }
-        <p>Total amount : <span></span>Rs.
+        <p className='totalAmount'><span className='totalSpan'>Total amount </span>: <span></span>Rs.
         {
-          updatedCart.map((item=> item.price * item.quantity)).reduce((total,value)=>total+value,0)
+          updatedCart.map((item=> item.price * item.quantity)).reduce((total,value)=>Math.round(total+value),0)
         }/-
         </p> 
        
+       </div>
+       <div className='proceed-div'>
+        <button className='proceed-btn'>Proceed To Checkout</button>
        </div>
     </>
   )
